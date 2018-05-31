@@ -22,6 +22,10 @@ class GTRController extends AppController
         $this->viewBuilder()->layout('frontend');
     }
 
+    public function dashboard(){
+
+    }
+
     public function add(){
         $this->loadModel('Gtr');
         $gtr_no = $this->Gtr->find('all', ['fields' => 'id'])->last();
