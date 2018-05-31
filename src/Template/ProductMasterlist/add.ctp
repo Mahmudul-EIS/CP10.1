@@ -17,12 +17,12 @@
                     <div class="col-sm-10 col-md-8 col-xs-12 clearfix">
                         <form method="post" action="<?php echo $this->Url->build(['controller' => 'ProductMasterlist', 'action' => 'add']); ?>">
                             <div class="form-group">
-                                <label class="fleft-label" for="part">Part No <span class="fright">:</span></label>
-                                <input  type="text" name="part_no" class="form-control fright-input" id="part" data-validation="required">
+                                <label class="fleft-label" for="part-no">Part No <span class="fright">:</span></label>
+                                <input  type="text" name="part_no" class="form-control fright-input part-no" id="part-no" data-validation="required">
                             </div>
                             <div class="form-group">
-                                <label class="fleft-label" for="partn">Part Name <span class="fright">:</span></label>
-                                <input type="text" name="part_name" class="form-control fright-input" id="partn" data-validation="required">
+                                <label class="fleft-label" for="part-name">Part Name <span class="fright">:</span></label>
+                                <input type="text" name="part_name" class="form-control fright-input part-name" id="part-name" data-validation="required">
                             </div>
                             <div class="form-group">
                                 <label class="fleft-label" for="zon">Zon <span class="fright">:</span></label>
@@ -65,3 +65,30 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        var part_nos = [<?php echo $part_nos; ?>];
+        var part_names = [<?php echo $part_names; ?>];
+        var part_no_options = {
+            source: part_nos,
+            minLength: 0
+        };
+        var part_name_options = {
+            source: part_names,
+            minLength: 0
+        };
+        $(document).on('keydown.autocomplete', '.part-no', function(){
+            $(this).autocomplete(part_no_options);
+        });
+        $(document).on('autocompleteselect', '.part-no', function(e, ui){
+            $('#part-name').val(ui.item.partName);
+        });
+        $(document).on('keydown.autocomplete', '.part-name', function(){
+            $(this).autocomplete(part_name_options);
+        });
+        $(document).on('autocompleteselect', '.part-name', function(e, ui){
+            $('#part-no').val(ui.item.partNo);
+        });
+    });
+</script>
