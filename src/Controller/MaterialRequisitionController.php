@@ -80,6 +80,63 @@ class MaterialRequisitionController extends AppController
         $this->set('_serialize', ['dbData']);
     }
 
+    public function productionReport(){
+        $this->loadModel('ProdMrReport');
+        $dataFromProd = null;
+        $urlToProd = 'http://productionmodule.acumenits.com/api/mrReport';
+
+        $optionsForProd = [
+            'http' => [
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'GET'
+            ]
+        ];
+        $contextForProd  = stream_context_create($optionsForProd);
+        $resultFromProd = file_get_contents($urlToProd, false, $contextForProd);
+        if ($resultFromProd !== FALSE) {
+            $dataFromProd = json_decode($resultFromProd);
+            foreach($dataFromProd as $dp){
+                foreach($dp->items as $item){
+                    $storeCheck = $this->ProdMrReport->find()
+                        ->where(['prod_mr_id' => $item->id]);
+                    if(!$storeCheck->isEmpty()){
+                        foreach($storeCheck as $ss){
+                            $item->inStore = $ss;
+                        }
+                    }
+                }
+            }
+        }
+        if($this->request->is('post')){
+            if($this->request->data('action') == 'add'){
+                $materialRequisition = $this->ProdMrReport->newEntity();
+                $materialRequisition = $this->ProdMrReport->patchEntity($materialRequisition, $this->request->data);
+                if ($this->ProdMrReport->save($materialRequisition)) {
+                    $this->Flash->success(__('The material requisition has been saved.'));
+
+                    return $this->redirect(['action' => 'productionReport']);
+                }
+                $this->Flash->error(__('The material requisition could not be saved. Please, try again.'));
+            }
+            if($this->request->data('action') == 'edit'){
+                $materialRequisition = $this->ProdMrReport->get($this->request->data('store-id'), [
+                    'contain' => []
+                ]);
+                if ($this->request->is(['patch', 'post', 'put'])) {
+                    $materialRequisition = $this->ProdMrReport->patchEntity($materialRequisition, $this->request->data);
+                    if ($this->ProdMrReport->save($materialRequisition)) {
+                        $this->Flash->success(__('The material requisition has been saved.'));
+
+                        return $this->redirect(['action' => 'productionReport']);
+                    }
+                    $this->Flash->error(__('The material requisition could not be saved. Please, try again.'));
+                }
+            }
+        }
+        $this->set('mr', $dataFromProd);
+        $this->set('pic', $this->Auth->user('username'));
+    }
+
     public function view($id){
         $this->loadModel('MrReport');
         $materialRequisition = $this->MrReport->get($id, [

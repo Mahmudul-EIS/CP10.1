@@ -129,18 +129,17 @@
                 Material Requisition <?php if($role == 'store-manager'){ ?><span class="badge"><?php echo $mrReqCount; ?></span><?php } ?>
                 <span class="caret"></span>
             </button>
-            <?php if($role == 'admin'){ ?>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <?php if($role == 'admin'){ ?>
                 <li><a href="<?php echo $this->Url->build(['controller' => 'MaterialRequisition', 'action' => 'add']); ?>">Add</a></li>
                 <li><a href="<?php echo $this->Url->build(['controller' => 'MaterialRequisition', 'action' => 'report']); ?>">Report</a></li>
-            </ul>
             <?php } ?>
             <?php if($role == 'store-manager'){ ?>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                     <li><a href="<?php echo $this->Url->build(['controller' => 'MaterialRequisition', 'action' => 'report']); ?>">Report</a></li>
                     <li><a href="<?php echo $this->Url->build(['controller' => 'MaterialRequisition', 'action' => 'requested']); ?>">Requested <span class="badge"><?php echo $mrReqCount; ?></span></a></li>
-                </ul>
             <?php } ?>
+            <li><a href="<?php echo $this->Url->build(['controller' => 'MaterialRequisition', 'action' => 'productionReport']); ?>">Report from Production Module</a></li>
+            </ul>
         </div>
         
         
