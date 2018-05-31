@@ -12,17 +12,16 @@
                                 <input name="date" type="text" class="form-control fright-input" id="date" value="<?php echo date('Y-m-d'); ?>">
                             </div>
                             <div class="form-group">
-                                <label class="fleft-label" for="mit-mr">MIT No <span class="fright">:</span></label>
-                                <input name="mit_no" type="text" class="form-control fright-input" id="mit-mr">
+                                <label class="fleft-label" for="selected-value"> MIT / PRN / PR <span class="fright">:</span></label>
+                                <select name="select_field" id="selected-field" class="fright-input">
+                                    <option value="MIT">MIT</option>
+                                    <option value="PRN">PRN</option>
+                                    <option value="PR">PR</option>
+                                </select>
+                                <input type="text" name="select_val" id="selected-value" class=" fright-input">
                             </div>
-                            <div class="form-group">
-                                <label class="fleft-label" for="mit-prn">PRN No <span class="fright">:</span></label>
-                                <input name="prn_no" type="text" class="form-control fright-input" id="mit-prn">
-                            </div>
-                            <div class="form-group">
-                                <label class="fleft-label" for="mit-pr">PR No <span class="fright">:</span></label>
-                                <input name="pr_no" type="text" class="form-control fright-input" id="mit-pr">
-                            </div>
+                             <div id="hidden">
+                             </div>
                             <div class="form-group">
                                 <label class="fleft-label" for="tender">Tender No <span class="fright">:</span></label>
                                 <input name="tender_no" type="text" class="form-control fright-input" id="tender">
@@ -50,7 +49,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="fleft-label" for="quatity">Quantity <span class="fright">:</span></label>
-                                <input name="quantity" type="number" class="form-control fright-input" id="quatity">
+                                <input name="quantity" type="number" class="form-control fright-input" id="quantity">
                             </div>
                             <div class="form-group">
                                 <label class="fleft-label" for="pstore">PIC Store <span class="fright">:</span></label>
@@ -67,9 +66,7 @@
                                     <tr>
                                         <th>NO</th>
                                         <th>Date</th>
-                                        <th>MIT No</th>
-                                        <th>PRN No</th>
-                                        <th>PR No</th>
+                                        <th>MIT / PRN / PR</th>
                                         <th>Tender No</th>
                                         <th>SO No</th>
                                         <th>Part No</th>
@@ -155,24 +152,46 @@
 
 <script>
     $(document).ready(function(){
-        var formObj = [];
-        var finalData = [];
-        var id_no = 1;
+        var sel_val = '';
+        var sel_field = '';
+        $('#selected-value').on('change',function (e) {
+            e.preventDefault();
+            sel_val = $(this).val();
+            sel_field = $('#selected-field').val();
+            if(sel_field == 'MIT'){
+                $('#hidden').html('<input name="mit_no" type="hidden" value="'+sel_val+'">');
+            }else if(sel_field =='PRN'){
+                $('#hidden').html('<input name="prn_no" type="hidden" value="'+sel_val+'">');
+            }else if(sel_field =='PR'){
+                $('#hidden').html('<input name="pr_no" type="hidden" value="'+sel_val+'">');
+            }
+        });
+        $('#selected-field').on('change',function (ev) {
+            ev.preventDefault();
+            if($(this).val() == 'MIT'){
+                $('#hidden').html('<input name="mit_no" type="hidden" value="'+sel_val+'">');
+            }else if($(this).val() =='PRN'){
+                $('#hidden').html('<input name="prn_no" type="hidden" value="'+sel_val+'">');
+            }else if($(this).val() =='PR'){
+                $('#hidden').html('<input name="pr_no" type="hidden" value="'+sel_val+'">');
+            }
+        });
         $('#save-table').click(function(){
-            var multData = [];
-            var html_form = '<tr>';
-            formObj['id'] = id_no;
-            var inputs = $('#form-data').serializeArray();
-            html_form+='<td>'+formObj['id']+'</td>';
-            $.each(inputs, function(i, input){
-                formObj[input.name] = input.value;
-                html_form+='<td>'+input.value+'</td>';
-                Cookies.set(input.name+id_no, input.value);
-            });
-            html_form+='</tr>';
+            var count = 1;
+            var html_form = '<tr>'+
+                            '<td>'+count+'</td>'+
+                            '<td>'+$('#date').val()+'</td>'+
+                            '<td>'+$('#selected-value').val()+'</td>'+
+                            '<td>'+$('#tender').val()+'</td>'+
+                            '<td>'+$('#so_no').val()+'</td>'+
+                            '<td>'+$('#part_no').val()+'</td>'+
+                            '<td>'+$('#part_name').val()+'</td>'+
+                            '<td>'+$('#section').val()+'</td>'+
+                            '<td>'+$('#quantity').val()+'</td>'+
+                            '<td>'+$('#pstore').val()+'</td>'+
+                            '</tr>';
+                count +=1;
             $('#table-data').append(html_form);
-            multData[multData.length] = formObj;
-            finalData.push(multData);
             var htmlPopup = '<div class="clearfix" id="form-data'+formObj['id']+'">'+
                 '<table class="table table-bordered">'+
                 '<tbody>'+
@@ -219,9 +238,8 @@
                 '</table>'+
                 '<form id="final-form'+formObj['id']+'">'+
                 '<input name="date" type="hidden" value="'+formObj['date']+'">'+
-                '<input name="mit_no" type="hidden" value="'+formObj['mit_no']+'">'+
-                '<input name="prn_no" type="hidden" value="'+formObj['prn_no']+'">'+
-                '<input name="pr_no" type="hidden" value="'+formObj['pr_no']+'">'+
+                '<input name="select_val" type="hidden" value="'+sel_val+'">'+
+                '<input name="select_field" type="hidden" value="'+sel_field+'">'+
                 '<input name="tender_no" type="hidden" value="'+formObj['tender_no']+'">'+
                 '<input name="so_no" type="hidden" value="'+formObj['so_no']+'">'+
                 '<input name="part_no" type="hidden" value="'+formObj['part_no']+'">'+

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="992eee5b-642b-46ff-8c9c-95fbc6532a10" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GTRController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GTRController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Element/header.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Element/header.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InStockCodeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InStockCodeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp" afterDir="false" />
     </list>
     <ignored path="storemodule.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,60 +26,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApiController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ApiController.php">
+      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/InStockCode/add.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-363" />
+            <state relative-caret-position="-4116" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GTRController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/GTRController.php">
+      <file leaf-file-name="stock_out.ctp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-335">
-              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-              <folding>
-                <element signature="e#33#66#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="448">
+              <caret line="192" column="26" lean-forward="true" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/GTR/dashboard.ctp">
+      <file leaf-file-name="InStockCodeController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/InStockCodeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="1" column="130" selection-start-line="1" selection-start-column="130" selection-end-line="1" selection-end-column="130" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="147" column="102" selection-start-line="147" selection-start-column="102" selection-end-line="147" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/Element/head.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-167" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/Element/header.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="38" column="130" selection-start-line="38" selection-start-column="130" selection-end-line="38" selection-end-column="130" />
+            <state relative-caret-position="29">
+              <caret line="118" column="46" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>save</find>
+      <find>form-data</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,8 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/ProductMasterlistController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/InStockCodeController.php" />
         <option value="$PROJECT_DIR$/src/Template/Element/footer.ctp" />
         <option value="$PROJECT_DIR$/src/Template/LogisticFinishGood/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/QuarantineStocks/add.ctp" />
@@ -139,6 +114,8 @@
         <option value="$PROJECT_DIR$/src/Template/GTR/dashboard.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Element/header.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/AppController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/InStockCodeController.php" />
+        <option value="$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp" />
       </list>
     </option>
   </component>
@@ -231,14 +208,7 @@
               <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Template" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Element" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="storemodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Template" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="GTR" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="InStockCode" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -311,12 +281,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1486202679128</updated>
-      <workItem from="1527751016150" duration="1333000" />
+      <workItem from="1527751016150" duration="14676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1333000" />
+    <option name="totallyTimeSpent" value="14676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1378" height="743" extended-state="0" />
@@ -360,27 +330,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Template/LogisticFinishGood/approve.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="138" column="164" selection-start-line="138" selection-start-column="164" selection-end-line="138" selection-end-column="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LogisticFinishGoodController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Table/MrReportTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/MaterialIssueTicket/requested.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -620,11 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Element/login-head.ctp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -658,7 +602,7 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/GTRController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-335">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding>
             <element signature="e#33#66#0#PHP" expanded="true" />
           </folding>
@@ -669,6 +613,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="147" column="102" selection-start-line="147" selection-start-column="102" selection-end-line="147" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/InStockCode/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4116" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/InStockCodeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="118" column="46" selection-start-line="118" selection-start-column="46" selection-end-line="118" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="192" column="26" lean-forward="true" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
         </state>
       </provider>
     </entry>

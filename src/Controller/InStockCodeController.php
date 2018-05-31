@@ -122,10 +122,14 @@ class InStockCodeController extends AppController
             $inStock->part_name = $this->request->data['part_name'];
             $inStock->tender_no = $this->request->data['tender_no'];
             $inStock->so_no = $this->request->data['so_no'];
-            $inStock->prn_no = $this->request->data['prn_no'];
-            $inStock->pr_no = $this->request->data['pr_no'];
+            if($this->request->data['select_field'] == 'PRN'){
+                $inStock->prn_no = $this->request->data['select_val'];
+            }elseif (isset($this->request->data['select_field']) == 'PR'){
+                $inStock->pr_no = $this->request->data['select_val'];
+            }elseif (isset($this->request->data['select_field']) == 'MIT'){
+                $inStock->mit_no = $this->request->data['select_val'];
+            }
             $inStock->section = $this->request->data['section'];
-            $inStock->mit_no = $this->request->data['mit_no'];
             $inStock->quantity = $this->request->data['quantity'];
             $inStock->pic_store = $this->request->data['pic_store'];
             $inStock->date = $this->request->data['date'];
