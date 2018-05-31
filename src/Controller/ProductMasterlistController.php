@@ -58,6 +58,30 @@ class ProductMasterlistController extends AppController
      */
     public function add()
     {
+        $partNo = $partName = '';
+        $urlToEng = 'http://engmodule.acumenits.com/api/all-bom-parts';
+
+        $optionsForEng = [
+            'http' => [
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'GET'
+            ]
+        ];
+        $contextForEng  = stream_context_create($optionsForEng);
+        $resultFromEng = file_get_contents($urlToEng, false, $contextForEng);
+        if($resultFromEng !== FALSE){
+            $dataFromEng = json_decode($resultFromEng);
+            foreach($dataFromEng as $eng){
+                $partNo .= '{label:"'.$eng->partNo.
+                    '",bomId:"'.$eng->id.
+                    '",partName:"'.$eng->partName.'"},';
+                $partName .= '{label:"'.$eng->partName.
+                    '",bomId:"'.$eng->id.
+                    '",partNo:"'.$eng->partNo.'"},';
+            }
+        }
+        $partNo = rtrim($partNo, ',');
+        $partName = rtrim($partName, ',');
         $productMasterlist = $this->ProductMasterlist->newEntity();
         if ($this->request->is('post')) {
             $productMasterlist = $this->ProductMasterlist->patchEntity($productMasterlist, $this->request->data);
@@ -87,6 +111,8 @@ class ProductMasterlistController extends AppController
         }
         $this->set(compact('productMasterlist'));
         $this->set('_serialize', ['productMasterlist']);
+        $this->set('part_nos', $partNo);
+        $this->set('part_names', $partName);
     }
 
     /**
