@@ -47,13 +47,18 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authorize' => ['Controller'],
             'loginRedirect' => [
-                'controller' => 'ProductMasterlist',
-                'action' => 'index'
+                'controller' => 'GTR',
+                'action' => 'dashboard'
             ],
             'logoutRedirect' => [
                 'controller' => 'Users',
                 'action' => 'login',
                 'home'
+            ],
+            'unauthorizedRedirect' => [
+                'controller' => 'GTR',
+                'action' => 'dashboard',
+                'prefix' => false
             ]
         ]);
 
@@ -134,13 +139,13 @@ class AppController extends Controller
 
     public function isAuthorized($user){
         if(isset($user['role']) && $user['role'] == 'admin'){
-            $allowedActions = ['search', 'addItems', 'addStockOut', 'add', 'report', 'index', 'logout', 'stockOut', 'view', 'edit'];
+            $allowedActions = ['search', 'addItems', 'addStockOut', 'add', 'report', 'index', 'logout', 'stockOut', 'view', 'edit','dashboard'];
             if(in_array($this->request->action, $allowedActions)){
                 return true;
             }
         }
         if(isset($user['role']) && $user['role'] == 'store-manager'){
-            $allowedActions = ['index', 'requested', 'report', 'approve', 'logout', 'view'];
+            $allowedActions = ['index', 'requested', 'report', 'approve', 'logout', 'view','dashboard'];
             if(in_array($this->request->action, $allowedActions)){
                 return true;
             }
