@@ -34,5 +34,8 @@ class InventoryController extends AppController
         $this->set(compact('inventory'));
         $this->set('_serialize', ['inventory']);
     }
+    public function add(){
+
+    }
 
 }

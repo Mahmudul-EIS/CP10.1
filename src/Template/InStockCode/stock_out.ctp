@@ -3,7 +3,7 @@
         <div class="row">
             <div class="all-list-item clearfix">
                 <div class="barcode clearfix">
-                    <h2 class="text-cl tfrom"><b>BARCODE- STOCK OUT</b></h2>
+                    <h2 class="text-cl tfrom"><b>BARCODE - STOCK OUT</b></h2>
                     <div style="height:20px"></div>
                     <div class="col-sm-8 clearfix">
                         <form id="form-data">
@@ -134,26 +134,51 @@
         </div>
     </div>
 </div>
+<form action="<?php echo $this->Url->build(['controller' => 'InStockCode', 'action' => 'addStockOut']); ?>" method="post">
 <div id="all-modals"></div>
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">BARCODE - STOCK OUT</h4>
             </div>
-            <div class="modal-body" id="modal-data">
+            <div class="modal-body">
+                <div class="clearfix">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>Date</th>
+                            <th>Transaction No</th>
+                            <th>Tender No</th>
+                            <th>In Stock Code</th>
+                            <th>SO No</th>
+                            <th>Part No</th>
+                            <th>Part Name</th>
+                            <th>Quantity</th>
+                            <th>PIC Store</th>
+                        </tr>
+                        </thead>
+                        <tbody id="modal-data">
+                        </tbody>
+                    </table>
+                    </div>
+                <input type="submit" class="btn btn-default pull-right" value="Submit">
+                <br>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
 </div>
+</form>
 
 <script>
     $(document).ready(function(){
         var sel_val = '';
         var sel_field = '';
+        var count = 0;
         $('#selected-value').on('change',function (e) {
             e.preventDefault();
             sel_val = $(this).val();
@@ -176,119 +201,60 @@
                 $('#hidden').html('<input name="pr_no" type="hidden" value="'+sel_val+'">');
             }
         });
-        $('#save-table').click(function(){
-            var count = 1;
-            var html_form = '<tr>'+
-                            '<td>'+count+'</td>'+
-                            '<td>'+$('#date').val()+'</td>'+
-                            '<td>'+$('#selected-value').val()+'</td>'+
-                            '<td>'+$('#tender').val()+'</td>'+
-                            '<td>'+$('#so_no').val()+'</td>'+
-                            '<td>'+$('#part_no').val()+'</td>'+
-                            '<td>'+$('#part_name').val()+'</td>'+
-                            '<td>'+$('#section').val()+'</td>'+
-                            '<td>'+$('#quantity').val()+'</td>'+
-                            '<td>'+$('#pstore').val()+'</td>'+
-                            '</tr>';
-                count +=1;
+        $('#save-table').on('click',function(e){
+            e.preventDefault();
+            count ++;
+            var html_form =
+                '<tr>'+
+                '<td>'+count+'</td>'+
+                '<td>'+$('#date').val()+'</td>'+
+                '<td>'+$('#selected-value').val()+'</td>'+
+                '<td>'+$('#tender').val()+'</td>'+
+                '<td>'+$('#so_no').val()+'</td>'+
+                '<td>'+$('#part_no').val()+'</td>'+
+                '<td>'+$('#part_name').val()+'</td>'+
+                '<td>'+$('#section').val()+'</td>'+
+                '<td>'+$('#quantity').val()+'</td>'+
+                '<td>'+$('#pstore').val()+'</td>'+
+                '</tr>';
             $('#table-data').append(html_form);
-            var htmlPopup = '<div class="clearfix" id="form-data'+formObj['id']+'">'+
-                '<table class="table table-bordered">'+
-                '<tbody>'+
-                '<tr>'+
-                '<td>1</td>'+
-                '<td>TENDER NO</td>'+
-                '<td>'+formObj['tender_no']+'</td>'+
-                '</tr>'+
-                '<td>2</td>'+
-                '<td>TRANSACTION NO</td>'+
-                '<td>'+formObj['mit_no']+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                '<td>3</td>'+
-                '<td>IN STOCK CODE</td>'+
-                '<td>201605140001</td>'+
-                '</tr>'+
-                '<tr>'+
-                '<td>4</td>'+
-                '<td>DATE</td>'+
-                '<td>'+formObj['date']+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                '<td>5</td>'+
-                '<td>PART NO</td>'+
-                '<td>'+formObj['part_no']+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                '<td>6</td>'+
-                '<td>PART NAME</td>'+
-                '<td>'+formObj['part_name']+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                '<td>7</td>'+
-                '<td>QUANTITY</td>'+
-                '<td>'+formObj['quantity']+'</td>'+
-                '</tr>'+
-                '<tr>'+
-                '<td>8</td>'+
-                '<td>PIC STORE</td>'+
-                '<td>'+formObj['pic_store']+'</td>'+
-                '</tr>'+
-                '</tbody>'+
-                '</table>'+
-                '<form id="final-form'+formObj['id']+'">'+
-                '<input name="date" type="hidden" value="'+formObj['date']+'">'+
-                '<input name="select_val" type="hidden" value="'+sel_val+'">'+
-                '<input name="select_field" type="hidden" value="'+sel_field+'">'+
-                '<input name="tender_no" type="hidden" value="'+formObj['tender_no']+'">'+
-                '<input name="so_no" type="hidden" value="'+formObj['so_no']+'">'+
-                '<input name="part_no" type="hidden" value="'+formObj['part_no']+'">'+
-                '<input name="part_name" type="hidden" value="'+formObj['part_name']+'">'+
-                '<input name="section" type="hidden" value="'+formObj['section']+'">'+
-                '<input name="pic_store" type="hidden" value="'+formObj['pic_store']+'">'+
-                '<input name="quantity" type="hidden" value="'+formObj['quantity']+'">'+
-                '<input type="submit" class="btn btn-default pull-right" value="Submit"></form>'+
-                '</div><br>';
-            $('#modal-data').append(htmlPopup);
-            id_no+=1;
-        });
 
-        $('#generate-code').on('click', function(e){
+            var htmlPopup =
+                '<tr>'+
+                '<td>'+count+'</td>'+
+                '<td>'+$('#date').val()+'</td>'+
+                '<td>201605140001</td>'+
+                '<td>'+$('#tender').val()+'</td>'+
+                '<td>'+$('#selected-value').val()+'</td>'+
+                '<td>'+$('#so_no').val()+'</td>'+
+                '<td>'+$('#part_no').val()+'</td>'+
+                '<td>'+$('#part_name').val()+'</td>'+
+                '<td>'+$('#quantity').val()+'</td>'+
+                '<td>'+$('#pstore').val()+'</td>'+
+                '</tr>'+
+                '<input name="date'+count+'" type="hidden" value="'+$('#date').val()+'">'+
+                '<input name="tender_no'+count+'" type="hidden" value="'+$('#tender').val()+'">'+
+                '<input name="so_no'+count+'" type="hidden" value="'+$('#so_no').val()+'">'+
+                '<input name="part_no'+count+'" type="hidden" value="'+$('#part_no').val()+'">'+
+                '<input name="part_name'+count+'" type="hidden" value="'+$('#part_name').val()+'">'+
+                '<input name="section'+count+'" type="hidden" value="'+$('#section').val()+'">'+
+                '<input name="pic_store'+count+'" type="hidden" value="'+$('#pstore').val()+'">'+
+                '<input name="quantity'+count+'" type="hidden" value="'+$('#quantity').val()+'">'+
+                '<input name="select_val'+count+'" type="hidden" value="'+sel_val+'">'+
+                '<input name="select_field'+count+'" type="hidden" value="'+sel_field+'">'+
+                '<input name="count" type="hidden" value="'+count+'">';
+            $('#modal-data').append(htmlPopup);
+        });
+        $('#generate-code').on('click', function(e) {
+            e.preventDefault();
             $('.modal').modal('hide');
             $('#myModal').modal('show');
-            e.preventDefault();
-            for(var k = 1; k < id_no; k++){
-                $('#final-form'+k).on('submit', function(a){
-                    a.preventDefault();
-                    var formData = $(this).serialize();
-                    var formUrl = $(this).attr('action');
-                    var modalId = $(this).parent().attr('id');
-
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?php echo $this->Url->build(['Controller' => 'InStockCode', 'action' => 'addStockOut']); ?>',
-                        data: formData,
-                        dataType: 'text',
-                        success: function(data, textStatus, xhr){
-                            //alert(data);
-                            $('#'+modalId).html(data);
-                        },
-                        error: function(xhr, textStatus, error){
-                            //alert(textStatus);
-                            $('#'+modalId).html(textStatus);
-                        }
-                    });
-                    return false;
-                });
-            }
         });
-        
         var so_no = [<?php echo $so_no; ?>];
 
         $('#so_no').autocomplete({
             source : so_no,
             minLength : 0
         });
-
     });
 </script>

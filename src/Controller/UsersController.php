@@ -118,8 +118,7 @@ class UsersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function login()
-    {
+    public function login(){
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
@@ -133,6 +132,12 @@ class UsersController extends AppController
     public function logout()
     {
         return $this->redirect($this->Auth->logout());
+    }
+    public function isAuthorized($user){
+        if($user['role'] != 'admin'){
+            return false;
+        }
+        return parent::isAuthorized($user);
     }
 
 }
