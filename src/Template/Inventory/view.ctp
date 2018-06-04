@@ -34,7 +34,7 @@
                                 <td>Manual</td>
                                 <td><?= h($stock->pic) ?></td>
                                 <td><?= h($stock->remarks) ?></td>
-                                <td><?php if(isset($stock->status)){if($stock->status == 'approved'){echo "APPROVED";}elseif($stock->status == 'verified'){echo 'VERIFIED';}else{echo 'PENDING';}} ?></td>
+                                <td><?php if($stock->status == 'approved'){echo "APPROVED";}elseif($stock->status == 'verified'){echo 'VERIFIED';}else{echo 'PENDING';} ?></td>
                                 <?php if($role == 'verifier' || $role == 'approver'): ?>
                                     <td>
                                         <a class="btn btn-primary" href="<?php if($role == 'verifier'): echo $this->Url->build(['controller'=>'Inventory','action'=>'verify',$stock->id]);else: echo $this->Url->build(['controller'=>'Inventory','action'=>'approve',$stock->id]); endif;?>" ><?php if($role == 'verifier'): echo "VERIFY";else: echo "APPROVE"; endif;?></a>
