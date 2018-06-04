@@ -83,4 +83,50 @@ class InventoryController extends AppController
         exit;
     }
 
+    //Special Use for Manual Stocks Edit
+
+    public function edit($id = null)
+    {
+        $this->loadModel('ManualStocks');
+        $ms = $this->ManualStocks->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $ms = $this->ManualStocks->patchEntity($ms, $this->request->data);
+            if ($this->ManualStocks->save($ms)) {
+                $this->Flash->success(__('The Manual Stock has been saved.'));
+
+                return $this->redirect(['action' => 'requested']);
+            }
+            $this->Flash->error(__('The Manual Stock could not be saved. Please, try again.'));
+        }
+    }
+
+    public function requested(){
+        $this->loadModel('ManualStocks');
+        if($this->Auth->User('role') === 'verifier'){
+            $st = $this->ManualStocks->find('all')
+                ->where(['status' => 'requested']);
+        }else{
+            $st = $this->ManualStocks->find('all')
+                ->where(['status' => 'verified']);
+        }
+        $stocks = $this->paginate($st);
+
+        $this->set('stocks', $stocks);
+    }
+    public function verify($id = null){
+        $this->loadModel('ManualStocks');
+        $ms = $this->ManualStocks->get($id,[
+            'contain' =>[]
+        ]);
+        $this->set('ms',$ms);
+    }
+    public function approve($id = null){
+        $this->loadModel('ManualStocks');
+        $ms = $this->ManualStocks->get($id,[
+            'contain' =>[]
+        ]);
+        $this->set('ms',$ms);
+    }
 }

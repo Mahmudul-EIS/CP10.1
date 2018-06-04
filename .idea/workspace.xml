@@ -7,7 +7,11 @@
       <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/InStockCodeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InStockCodeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InventoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/UsersTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/UsersTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/Element/header.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Element/header.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inventory/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inventory/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inventory/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inventory/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Users/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Users/add.ctp" afterDir="false" />
     </list>
     <ignored path="storemodule.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,23 +31,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InStockCodeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/InStockCodeController.php">
+      <file leaf-file-name="view.ctp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/view.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
-              <folding>
-                <element signature="e#33#66#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="366">
+              <caret line="36" column="192" selection-start-line="36" selection-start-column="192" selection-end-line="36" selection-end-column="192" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/add.ctp">
+      <file leaf-file-name="verify.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/verify.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            <state relative-caret-position="702">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -51,11 +52,72 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="approve.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/approve.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="153" column="109" selection-start-line="153" selection-start-column="109" selection-end-line="153" selection-end-column="109" />
+              <folding>
+                <element signature="e#6#574#0#PHP" expanded="true" />
+                <element signature="e#602#633#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requested.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/requested.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1010">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/index.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="81" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="InventoryController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/InventoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-502">
-              <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+            <state relative-caret-position="336">
+              <caret line="111" column="46" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Element/header.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="92" column="69" selection-start-line="92" selection-start-column="69" selection-end-line="92" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inventory/add.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="38" column="91" selection-end-line="57" />
             </state>
           </provider>
         </entry>
@@ -77,12 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/Table/MaterialIssueTicketTable.php" />
-        <option value="$PROJECT_DIR$/src/Template/MaterialIssueTicket/requested.ctp" />
-        <option value="$PROJECT_DIR$/src/Template/MaterialIssueTicket/approve.ctp" />
-        <option value="$PROJECT_DIR$/src/Controller/MaterialIssueTicketController.php" />
-        <option value="$PROJECT_DIR$/src/Model/Table/GatePassTable.php" />
-        <option value="$PROJECT_DIR$/src/Template/GatePass/requested.ctp" />
         <option value="$PROJECT_DIR$/src/Template/GatePass/approve.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/GatePassController.php" />
         <option value="$PROJECT_DIR$/src/Template/GatePass/add.ctp" />
@@ -120,14 +176,20 @@
         <option value="$PROJECT_DIR$/src/Template/Users/login.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Layout/login.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/UsersController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/InventoryController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/AppController.php" />
-        <option value="$PROJECT_DIR$/src/Template/Element/header.ctp" />
         <option value="$PROJECT_DIR$/src/Model/Entity/ManualStocks.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/src/Controller/InStockCodeController.php" />
         <option value="$PROJECT_DIR$/src/Template/Element/footer.ctp" />
+        <option value="$PROJECT_DIR$/src/Controller/InStockCodeController.php" />
+        <option value="$PROJECT_DIR$/src/Model/Table/UsersTable.php" />
+        <option value="$PROJECT_DIR$/src/Template/Users/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Inventory/add.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Inventory/verify.ctp" />
+        <option value="$PROJECT_DIR$/src/Controller/AppController.php" />
+        <option value="$PROJECT_DIR$/src/Template/Inventory/requests.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Element/header.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Inventory/approve.ctp" />
+        <option value="$PROJECT_DIR$/src/Controller/InventoryController.php" />
+        <option value="$PROJECT_DIR$/src/Template/Inventory/view.ctp" />
       </list>
     </option>
   </component>
@@ -178,7 +240,7 @@
       <path value="$PROJECT_DIR$/vendor/robmorgan/phinx" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1378" />
@@ -218,26 +280,6 @@
               <item name="storemodule" type="b2602c69:ProjectViewProjectNode" />
               <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="storemodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="storemodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Table" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="storemodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Template" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -267,13 +309,6 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Template" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Layout" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="storemodule" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CP10.1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Template" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Users" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -344,12 +379,12 @@
       <workItem from="1527751016150" duration="14949000" />
       <workItem from="1527773103112" duration="2096000" />
       <workItem from="1528000942509" duration="19308000" />
-      <workItem from="1528087153059" duration="5754000" />
+      <workItem from="1528087153059" duration="13617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42107000" />
+    <option name="totallyTimeSpent" value="49970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -385,56 +420,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/Table/NbdoReportTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/NonBillingDeliveryOrder/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="169" column="34" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/NonBillingDeliveryOrder/report.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="31" selection-end-line="39" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/MaterialRequisition/requested.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="37" column="140" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="140" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/NonBillingDeliveryOrder/requested.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Compressed/CP 10.0 PG 4 -80/CP 10.0 PG 4 -80/index-52.html" />
-    <entry file="file://$PROJECT_DIR$/src/Template/MaterialRequisition/approve.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="93" column="32" selection-start-line="93" selection-start-column="32" selection-end-line="97" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/NonBillingDeliveryOrder/approve.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="83" column="53" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/NonBillingDeliveryOrderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -568,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6860">
-          <caret line="245" column="47" selection-end-line="259" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/xampp/htdocs/Indcom/src/Controller/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3528" />
@@ -599,16 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="127" column="79" selection-start-line="127" selection-start-column="79" selection-end-line="127" selection-end-column="79" />
-          <folding>
-            <element signature="e#33#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Users/login.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
@@ -623,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Element/header.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="90" column="140" selection-start-line="90" selection-start-column="140" selection-end-line="90" selection-end-column="140" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Table/ManualStocksTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-924" />
@@ -639,17 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-82">
           <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="141" column="142" selection-start-line="141" selection-start-column="142" selection-end-line="141" selection-end-column="142" />
-          <folding>
-            <element signature="e#6#574#0#PHP" expanded="true" />
-            <element signature="e#602#633#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,37 +645,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Element/footer.ctp">
+    <entry file="file://$PROJECT_DIR$/src/Template/InStockCode/stock_out.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="6972">
+          <caret line="258" column="7" lean-forward="true" selection-start-line="258" selection-start-column="7" selection-end-line="258" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-168" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Table/UsersTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1456">
+          <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Users/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="19" column="119" selection-start-line="19" selection-start-column="119" selection-end-line="19" selection-end-column="119" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/InStockCodeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+        <state>
+          <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
           <folding>
             <element signature="e#33#66#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/InventoryController.php">
+    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/add.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-502">
-          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+        <state relative-caret-position="291">
+          <caret line="38" column="91" selection-end-line="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/add.ctp">
+    <entry file="file://$PROJECT_DIR$/src/Controller/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        <state relative-caret-position="473">
+          <caret line="98" column="5" selection-start-line="82" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Element/footer.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-404">
+          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="153" column="109" selection-start-line="153" selection-start-column="109" selection-end-line="153" selection-end-column="109" />
+          <folding>
+            <element signature="e#6#574#0#PHP" expanded="true" />
+            <element signature="e#602#633#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="81" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Element/header.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="92" column="69" selection-start-line="92" selection-start-column="69" selection-end-line="92" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/approve.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="37" column="78" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/requested.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1010">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/InventoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="111" column="46" selection-start-line="111" selection-start-column="46" selection-end-line="111" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/verify.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inventory/view.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="36" column="192" selection-start-line="36" selection-start-column="192" selection-end-line="36" selection-end-column="192" />
         </state>
       </provider>
     </entry>

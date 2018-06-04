@@ -145,22 +145,6 @@ class InStockCodeController extends AppController
             }
         }
     }
-    public function getCurrentBalance($partNo) {
-        $this->loadModel('InStockCode');
-        $sum = $this->InStockCode->find('all', [
-            'conditions' => [
-                'part_no' => $partNo
-            ]
-        ])->toArray();
-
-        $qty = 0;
-        foreach ($sum as $sm) {
-            $qty += (is_numeric($sm->quantity) ? $sm->quantity : 0);
-        }
-
-        echo $qty;
-        exit;
-    }
     
     public function searchApi(){
         $this->autoRender = false;

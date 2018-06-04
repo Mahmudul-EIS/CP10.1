@@ -16,9 +16,8 @@
                             <th>STOCK TAKE</th>
                             <th>DONE BY</th>
                             <th>REMARKS</th>
-                            <th>STATUS</th>
                             <?php if($role == 'verifier' || $role == 'approver'): ?>
-                            <th>ACTION</th>
+                                <th>ACTION</th>
                             <?php endif;?>
                         </tr>
                         </thead>
@@ -34,7 +33,6 @@
                                 <td>Manual</td>
                                 <td><?= h($stock->pic) ?></td>
                                 <td><?= h($stock->remarks) ?></td>
-                                <td><?php if(isset($stock->status)){if($stock->status == 'approved'){echo "APPROVED";}elseif($stock->status == 'verified'){echo 'VERIFIED';}else{echo 'PENDING';}} ?></td>
                                 <?php if($role == 'verifier' || $role == 'approver'): ?>
                                     <td>
                                         <a class="btn btn-primary" href="<?php if($role == 'verifier'): echo $this->Url->build(['controller'=>'Inventory','action'=>'verify',$stock->id]);else: echo $this->Url->build(['controller'=>'Inventory','action'=>'approve',$stock->id]); endif;?>" ><?php if($role == 'verifier'): echo "VERIFY";else: echo "APPROVE"; endif;?></a>
@@ -48,16 +46,16 @@
             </div>
         </div>
         <div class="pagination-indkom pull-right">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <?php
-                 echo $this->Paginator->prev(__('<<'), array('tag' => 'li', 'class' => 'page-item'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
-                 echo $this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'page-link active','tag' => 'li','first' => 1));
-                 echo $this->Paginator->next(__('>>'), array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
-            ?>
-          </ul>
-        </nav>
-    </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <?php
+                    echo $this->Paginator->prev(__('<<'), array('tag' => 'li', 'class' => 'page-item'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+                    echo $this->Paginator->numbers(array('separator' => '','currentTag' => 'a', 'currentClass' => 'page-link active','tag' => 'li','first' => 1));
+                    echo $this->Paginator->next(__('>>'), array('tag' => 'li','currentClass' => 'disabled'), null, array('tag' => 'li','class' => 'disabled','disabledTag' => 'a'));
+                    ?>
+                </ul>
+            </nav>
+        </div>
     </div>
 </div>
 </div>
