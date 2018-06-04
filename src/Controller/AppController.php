@@ -139,7 +139,7 @@ class AppController extends Controller
 
     public function isAuthorized($user){
         if(isset($user['role']) && $user['role'] == 'admin'){
-            $allowedActions = ['search', 'addItems', 'addStockOut', 'add', 'report', 'index', 'logout', 'stockOut', 'view', 'edit','dashboard'];
+            $allowedActions = ['search', 'addItems', 'addStockOut', 'add', 'report', 'index', 'logout', 'stockOut', 'view', 'edit','dashboard', 'getCurrentBalance'];
             if(in_array($this->request->action, $allowedActions)){
                 return true;
             }

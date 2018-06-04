@@ -87,6 +87,8 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>">Report</a></li>
+                <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'add']); ?>">Manual Stock</a></li>
+                <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'view']); ?>">Manual Stock List</a></li>
             </ul>
         </div>
         <div class="btn-group-vertical" role="group" class="dropdown">
