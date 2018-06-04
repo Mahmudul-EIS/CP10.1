@@ -5,7 +5,7 @@
                   <img src="<?php echo $this->request->webroot.'assets/img/logo.png'; ?>" alt="">
               </div>
             <h2 class="login-title">Please enter your username and password</h2>
-            <form method="post" action="<?php echo $this->Url->build(['controller' => 'Users', 'action' => 'login']); ?>" class="from-submit">
+            <form method="post" action="#" class="from-submit">
                 <div class="form-group">
                     <label for="user-name-login">Username</label>
                     <input type="text"  name="username" class="form-control"/>

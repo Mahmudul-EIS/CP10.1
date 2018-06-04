@@ -113,34 +113,53 @@ class InStockCodeController extends AppController
     }
 
     public function addStockOut(){
-        $this->autoRender = false;
-        $this->viewBuilder()->layout('ajax');
-        $inStockTable = TableRegistry::get('StockOut');
-        $inStock = $inStockTable->newEntity();
-        if($this->request->is('ajax')){
-            $inStock->part_no = $this->request->data['part_no'];
-            $inStock->part_name = $this->request->data['part_name'];
-            $inStock->tender_no = $this->request->data['tender_no'];
-            $inStock->so_no = $this->request->data['so_no'];
-            if($this->request->data['select_field'] == 'PRN'){
-                $inStock->prn_no = $this->request->data['select_val'];
-            }elseif (isset($this->request->data['select_field']) == 'PR'){
-                $inStock->pr_no = $this->request->data['select_val'];
-            }elseif (isset($this->request->data['select_field']) == 'MIT'){
-                $inStock->mit_no = $this->request->data['select_val'];
-            }
-            $inStock->section = $this->request->data['section'];
-            $inStock->quantity = $this->request->data['quantity'];
-            $inStock->pic_store = $this->request->data['pic_store'];
-            $inStock->date = $this->request->data['date'];
-            if(!ctype_digit($inStock->quantity)){
-                echo 'Quantity must be numeric!';
-            }elseif($inStockTable->save($inStock)){
-                echo 'Record added!';
-            }else{
-                echo 'Technical difficulty!';
+        $this->loadModel('StockOut');
+        if($this->request->is('post')){
+            if($this->request->data['count'] != ''){
+                for($i = 1; $i <= $this->request->data['count']; $i++){
+                    $inStock = $this->StockOut->newEntity();
+                    $inStock->part_no = $this->request->data['part_no'.$i];
+                    $inStock->part_name = $this->request->data['part_name'.$i];
+                    $inStock->tender_no = $this->request->data['tender_no'.$i];
+                    $inStock->so_no = $this->request->data['so_no'.$i];
+                        if($this->request->data['select_field'.$i] === 'PRN'){
+                            $inStock->prn_no = $this->request->data['select_val'.$i];
+                        }elseif ($this->request->data['select_field'.$i] === 'PR'){
+                            $inStock->pr_no = $this->request->data['select_val'.$i];
+                        }elseif ($this->request->data['select_field'.$i] === 'MIT'){
+                            $inStock->mit_no = $this->request->data['select_val'.$i];
+                        }
+                    $inStock->section = $this->request->data['section'.$i];
+                    $inStock->quantity = $this->request->data['quantity'.$i];
+                    $inStock->pic_store = $this->request->data['pic_store'.$i];
+                    $inStock->date = $this->request->data['date'.$i];
+                    if(!ctype_digit($inStock->quantity)){
+                        echo 'Quantity must be numeric!';
+                    }elseif($this->StockOut->save($inStock)){
+                        $this->Flash->success(__('The Record has been Added ! '));
+                    }else{
+                        echo 'Technical difficulty!';
+                    }
+                }
+                return $this->redirect(['action' => 'stockOut']);
             }
         }
+    }
+    public function getCurrentBalance($partNo) {
+        $this->loadModel('InStockCode');
+        $sum = $this->InStockCode->find('all', [
+            'conditions' => [
+                'part_no' => $partNo
+            ]
+        ])->toArray();
+
+        $qty = 0;
+        foreach ($sum as $sm) {
+            $qty += (is_numeric($sm->quantity) ? $sm->quantity : 0);
+        }
+
+        echo $qty;
+        exit;
     }
     
     public function searchApi(){
