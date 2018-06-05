@@ -150,6 +150,12 @@ class AppController extends Controller
                 return true;
             }
         }
+        if(isset($user['role']) && ($user['role'] == 'verifier' || $user['role'] == 'approver')){
+            $allowedActions = ['index', 'requested', 'report', 'approve', 'logout', 'view','dashboard','edit','verify','approve'];
+            if(in_array($this->request->action, $allowedActions)){
+                return true;
+            }
+        }
         return false;
     }
 

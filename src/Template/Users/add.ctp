@@ -17,7 +17,7 @@
             echo $this->Form->input('username');
             echo $this->Form->input('password');
             echo $this->Form->input('role', [
-                'options' => ['admin' => 'Admin', 'store-manager' => 'Store Manager']
+                'options' => ['admin' => 'Admin', 'store-manager' => 'Store Manager','verifier' => 'Verifier','approver' => 'Approver']
             ]);
         ?>
     </fieldset>

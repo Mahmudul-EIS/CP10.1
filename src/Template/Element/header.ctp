@@ -87,8 +87,15 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'index']); ?>">Report</a></li>
+                <?php if($role == 'admin'): ?>
                 <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'add']); ?>">Manual Stock</a></li>
+                <?php endif;?>
+                <?php if($role == 'admin' || $role == 'store-manager'): ?>
                 <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'view']); ?>">Manual Stock List</a></li>
+                <?php endif;?>
+                <?php if ($role == 'verifier' || $role == 'approver'): ?>
+                    <li><a href="<?php echo $this->Url->build(['controller' => 'Inventory', 'action' => 'requested']); ?>">Manual Stock List</a></li>
+                <?php endif;?>
             </ul>
         </div>
         <div class="btn-group-vertical" role="group" class="dropdown">
